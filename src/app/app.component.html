@@ -41,7 +41,7 @@
           class="line"
           [class.line-up]="trips?.[i-1]?.level === 1 && t.level === 2"
           [class.line-down]="trips?.[i-1]?.level === 2 && t.level === 1"
-          [class.arrow-line]="t.lineType === 'arrow'"
+          [class.arrow-line]="t.lineType === 'arrow' && t.level !== 2"
         ></span>
       }
 
