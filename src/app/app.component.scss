@@ -1,0 +1,148 @@
+.trip-form {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 2rem;
+    padding: 1.5rem;
+
+    background-color: rgba(0, 217, 255, 0.12);
+    border-radius: 1rem;
+
+    div.form-field {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        flex-grow: 1;
+      }
+    }
+
+    div.button-container {
+      text-align: center;
+      margin-top: 1rem;
+
+      button {
+        background-color: coral;
+        color: white;
+      }
+    }
+  }
+}
+
+/* Timeline container styling */
+.trip-container {
+  position: relative;
+  padding: 3rem;
+  background-color: #fefefe;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  max-width: 100%;
+  display: flex;
+  align-items: end;
+}
+
+/* Each segment of the timeline */
+.trip-segment {
+  height: max-content;
+  width: 160px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  position: relative;
+  /* Shift the segment vertically if it is level 2 */
+  &.level-2 {
+    margin-bottom: 60px;
+  }
+
+  .trip-sign {
+    height: 12px;
+    width: 12px;
+    background-color: #007bff;
+    border-radius: 50%;
+  }
+
+  .labels {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+  .line {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-100%);
+    width: 160px;
+    height: 2px;
+    background-color: #007bff;
+
+    &.arrow-line::after {
+      content: '';
+      position: absolute;
+      right: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-left: 14px solid #007bff;
+    }
+
+    &.line-up {
+      transform: rotate(-21deg) translate(-100%, -30px);
+      border-radius: 50%/100px 100px 0 0;
+    }
+
+    &.line-down {
+      transform: rotate(21deg) translate(-100%, 29px);
+      border-radius: 50%/100px 100px 0 0;
+    }
+  }
+}
+
+.current-trips, .logs {
+  margin-top: 2rem;
+  padding-inline: 3rem;
+  ul {
+    margin-top: 0.5rem;
+    list-style-type: disc;
+    list-style-position: inside;
+
+    li {
+      font-size: 0.8rem;
+    }
+  }
+
+  .edit-button {
+    color: #ffad09;
+    border: none;
+    cursor: pointer;
+
+    transition: all 0.3s;
+
+    &:hover {
+      color: #9a6706;
+    }
+  }
+
+  .delete-button {
+    color:  #ff4d4d;
+    border: none;
+    cursor: pointer;
+    margin-left: 0.75rem;
+
+    transition: all 0.3s;
+
+    &:hover {
+      color: #a80e0e;
+    }
+  }
+}
