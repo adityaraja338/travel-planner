@@ -103,10 +103,6 @@ export class AppComponent {
     // Last trip in the array
     const prevTrip = this.trips[this.trips.length - 1];
 
-    // Rule 1: If it’s a continued trip => start of current === end of previous => line is "straight"
-    // Rule 2: If not continued => line is "arrow"
-    // Rule 3: If consecutive trips have the same pickup & drop => that is on Level 2
-
     if (trip.start === prevTrip.end) {
       // Continued trip
       trip.lineType = 'straight';

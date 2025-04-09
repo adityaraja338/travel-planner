@@ -1,27 +1,46 @@
-# TravelPlanner
+# Angular Travel Planner
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+## Overview
 
-## Development server
+**Angular Travel Planner** is an Angular-based application designed to help users visualize their trips in a timeline format. Users can enter a start and end location, and the app displays each trip segment with a unique design:
+- **Continued Trips:** When the start point of a trip matches the end point of the previous trip, a straight line is drawn.
+- **Non-Continued Trips:** If the trip does not continue from the last endpoint, a connecting line with an arrow is shown.
+- **Consecutive Repeated Trips:** Trips with the same start and end points are displayed on a different level (Level 2) for clear distinction.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+In addition to adding trips, users can now edit or delete existing trips. Every addition, edit, and deletion is logged, making it easier to track changes during the planning process. The application automatically converts full location names to a three-letter code and adjusts the layout responsively to accommodate any number of trips.
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **User Input Form:** Collects start and end locations.
+- **3-Letter Code Conversion:** Automatically generates a three-letter code for each location.
+- **Dynamic Trip Visualization:**
+  - Continued trips are rendered with a straight line.
+  - Non-continued trips are rendered with an arrow on the connecting line.
+  - Repeated trips (identical start and end) are offset to Level 2.
+- **Responsive Timeline:** The timeline adjusts based on the number of trips and the available container dimensions.
+- **Edit and Delete Functionality:**
+  - **Edit:** Modify an existing trip's start or end points.
+  - **Delete:** Remove a trip from the timeline.
+- **Logging:** Every trip addition, edit, and deletion is logged to help with debugging and tracking changes.
+- **Clean and Modern UI:** Utilizes Angular components, SCSS for styling, and Flexbox for layout.
 
-## Build
+## Technologies
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Angular:** Framework for building the single-page application.
+- **TypeScript:** Primary language for Angular components.
+- **HTML & SCSS:** For markup and styling.
+- **Angular CLI:** Tooling for project setup, development, and build.
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v10 or higher)
+- [Angular CLI](https://angular.io/cli) (Install globally using `npm install -g @angular/cli`)
 
-## Running end-to-end tests
+### Steps
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. **Clone the Repository:**
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   ```bash
+   git clone https://github.com/your-username/angular-travel-planner.git
+   cd angular-travel-planner
